@@ -19,6 +19,11 @@ let vm = new Vue({
         _this.productList = res.data.result.list;
         // _this.totalHoney = res.data.result.totalMoney;
       });
+
+      _this.$http.get("/apis/hello").then(function (res) {
+        _this.title = JSON.stringify(res);
+      });
+
     },
     selectProduct: function (item) {
       if(typeof item.checked === 'undefined'){
